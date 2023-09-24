@@ -1,0 +1,43 @@
+<!--
+🕹️ Author: Mohammad Rabius Sani
+🎮 Description: This code creates a simple Tic Tac Toe game using HTML, CSS (Tailwind CSS), and JavaScript. Two players take turns to play, and a modal pops up when someone wins or when it's a draw.
+⚙️ Languages: HTML, CSS (Tailwind CSS), JavaScript
+📅 Copyright © 2023 Mohammad Rabius Sani
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-green-100 shadow-md shadow-inner rounded p-12 w-96">
+        <h1 class="text-3xl mb-4 pb-2 text-center font-bold">Tic Tac Toe</h1><hr class="bg-red-500 p-1">
+        <div id="game-board" class="grid grid-cols-3 gap-x-20 gap-y-5 w-48 h-48 m-5">
+            <!-- Cells will be added dynamically with JavaScript -->
+        </div>
+        <p id="status" class="mt-4 pt-10 text-center font-semibold"></p>
+        <div class="flex h-auto items-center justify-center pt-5">
+            <button id="reset-button" class="bg-blue-500 text-white py-2 px-4 rounded">Reset</button>
+          </div>
+    </div>
+    <!-- Modal Popup with Overlay -->
+<div id="modal" class="fixed inset-0 flex items-center justify-center hidden">
+    <div class="fixed inset-0 bg-black opacity-50"></div>
+    <div class="bg-white w-64 p-4 rounded shadow-md text-center relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96">
+        <div class="flex justify-end">
+            <span class="cursor-pointer text-gray-500" id="close-modal-button">❌</span>
+        </div>
+        <p class="text-2xl font-semibold mb-2 pb-10" id="congratulatory-message">🎉 Congratulations! 🎉</p>
+        <p class="text-2xl font-semibold pb-10" id="winner-message"></p>
+        <button id="modal-reset-button" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Play Again</button>
+    </div>
+</div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
