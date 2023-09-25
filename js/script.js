@@ -31,28 +31,22 @@ function checkWin(player) {
 }
 
 // Function to handle player win
-
 function handleWin(player) {
     let message = "";
 
     if (player === PLAYER_X || player === PLAYER_O) {
         message = `😍 ${player} wins! 😍`;
-        statusMessage.textContent = message;
-        showModal(message);
     } else {
         const replacementElement = document.getElementById("congratulatory-message");
         if (replacementElement) {
             replacementElement.textContent = "🙊 Oops! 🙊";
         }
         message = "😕 It's a draw. 😔";
-        statusMessage.textContent = message;
-        showModal(message);
     }
-   
+
+    statusMessage.textContent = message;
+    showModal(message);
 }
-
-
-
 
 // Function to handle player move
 function handleMove(index) {
@@ -105,7 +99,6 @@ function renderBoard() {
     });
 }
 
-
 // Function to reset the game
 function resetGame() {
     board.fill("");
@@ -113,6 +106,12 @@ function resetGame() {
     renderBoard();
     statusMessage.textContent = `Player ${currentPlayer}'s turn`;
     hideModal();
+
+    // Reset the congratulatory message
+    const replacementElement = document.getElementById("congratulatory-message");
+    if (replacementElement) {
+        replacementElement.textContent = "🎉 Congratulations! 🎉";
+    }
 }
 
 // Function to show the modal with a message
@@ -139,4 +138,4 @@ modalResetButton.addEventListener("click", () => {
 closeModalButton.addEventListener("click", hideModal);
 
 // Initialize the game
-resetGame();
+resetGame(); 
